@@ -1,5 +1,5 @@
 if(localStorage.getItem("name") === null){
-    window.location.href="home.html";
+    window.location.href="index.html";
 }
 
 let user_id = localStorage.getItem("userId")
@@ -146,7 +146,7 @@ document.querySelector('#logout').addEventListener('click',function () {
         localStorage.removeItem("picture");
         localStorage.removeItem("userId");
 
-        window.location.href="home.html";
+        window.location.href="index.html";
 
     }).catch(function(error) {
         alert("Some error occurred")
