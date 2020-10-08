@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link id="theme" type="text/css" rel="stylesheet" href="css/style-light.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+</head>
+<style>
+    .debit, .credit{
+        display: none;
+    }
+    select:invalid{
+        color: gray;
+    }
+</style>
+<body>
+
+    <nav class="navbar bg-theme fixed-top">
+        <h2 class="m-0" style="width: 25%">Finalytics</h2>
+        <div class="row m-0" style="width: 50%; text-align: center" >
+        <select id="time-period" class="form-inline col-7 col-md-3" style="margin: auto">
+            <option value="this-month" selected>This Month</option>
+            <option value="all-time">All Time</option>
+            <option id="0" value="0">January</option>
+            <option id="1" value="1">February</option>
+            <option id="2" value="2">March</option>
+            <option id="3" value="3">April</option>
+            <option id="4" value="4">May</option>
+            <option id="5" value="5">June</option>
+            <option id="6" value="6">July</option>
+            <option id="7" value="7">August</option>
+            <option id="8" value="8">September</option>
+            <option id="9" value="9">October</option>
+            <option id="10" value="10">November</option>
+            <option id="11" value="11">December</option>
+        </select></div>
+        <div class="row m-0" style="width: 15%">
+            <input id="theme-switch" type="checkbox" name="checkbox" class="switch" style="margin: auto">
+        </div>
+        <a href="#" id="logout"><img src="img/exit.png"></a>
+
+
+
+    </nav>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <div class="card border-theme " style="border-width: 3px;">
+                    <img id="user_dp" src="" class="card-img-top mt-3" style="border-radius: 50%; height: 80%; width: 80%; margin: auto;"><br>
+                    <div class="card-body" style="text-align: center">
+                        <h2 id="user_name" style="text-align: center; margin-bottom: 0"></h2><br><hr>
+                        <button class="custom-button p-1 m-1" aria-pressed="false" data-toggle="modal" data-target="#exampleModal"><h5 class="m-1">Add Transaction</h5></button><hr>
+                        <button class="custom-button p-1 m-1" aria-pressed="false"><a href="analysis.html" target="_blank"><h5 class="m-1">View Stats</h5></a> </button><hr>
+                        <button class="custom-button p-1 m-1" aria-pressed="false"><a href="https://www.google.com/search?q=shopping+websites&rlz=1C1CHBF_enIN910IN910&oq=shopping+websites&aqs=chrome..69i57j0l7.4734j0j7&sourceid=chrome&ie=UTF-8" target="_blank"><h5 class="m-1 ext">Go Shopping</h5></a></button>
+                        <button class="custom-button p-1 m-1" aria-pressed="false"><a href="https://www.google.com/search?rlz=1C1CHBF_enIN910IN910&sxsrf=ALeKk03TPMdFQjUDi0pyjOlVntFx1AgRqA%3A1602169383535&ei=Jyp_X5OXIJOwrQHc84OYCA&q=food+delivery+websites+in+india&oq=food+delivery+websites+in+in&gs_lcp=CgZwc3ktYWIQAxgAMgUIABDJAzIGCAAQFhAeOgcIABBHELADOgIIAFD7VljiYGDSa2gCcAB4AoABsgSIAaERkgEJMi0yLjIuMS4xmAEAoAEBqgEHZ3dzLXdpesgBCLgBAsABAQ&sclient=psy-ab" target="_blank"><h5 class="m-1 ext">Order Food</h5></a></button>
+                        <button class="custom-button p-1 m-1" aria-pressed="false"><a href="https://www.google.com/search?rlz=1C1CHBF_enIN910IN910&sxsrf=ALeKk03Dx9DxSlV_l-xbnbUan1d0ixQTyA%3A1602169398763&ei=Nip_X9SMLpiv9QOgt4uQCA&q=online+payment+websites+in+india&oq=online+payment+websites+in+india&gs_lcp=CgZwc3ktYWIQAzIECAAQCjoHCAAQRxCwAzoGCAAQBxAeOgIIAFD68gFYz6QCYOC4AmgCcAB4AoABnwSIAY0okgEJMi05LjYuMS4xmAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwjU_4ePoqXsAhWYV30KHaDbAoIQ4dUDCA0&uact=5" target="_blank"><h5 class="m-1 ext">Pay Bills</h5></a></button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="card border-theme mt-1">
+                            <h3 class="wid-title" style="background: dodgerblue; padding: 5%; margin: 0; font-weight: bolder">Income</h3>
+                            <div class="card-body">
+                                <h4 class="rupee" style="float: left; margin-top: 5px">&#x20B9;&nbsp;</h4><h1 id="tot-in" style="color: #1e90ff; font-size: 3.5rem">--</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-theme mt-1">
+                            <h3 class="wid-title" style="background: dodgerblue; padding: 5%; margin: 0; font-weight: bolder">Expenditure</h3>
+                            <div class="card-body">
+                                <h4 class="rupee" style="float: left; margin-top: 5px">&#x20B9;&nbsp;</h4><h1 id="tot-exp" style="color: #1e90ff; font-size: 3.5rem">--</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-theme mt-1">
+                            <h3 class="wid-title" style="background: dodgerblue; padding: 5%; margin: 0; font-weight: bolder">Savings</h3>
+                            <div class="card-body">
+                                <h4 class="rupee" style="float: left; margin-top: 5px">&#x20B9;&nbsp;</h4><h1 id="tot-save" style="color: #1e90ff; font-size: 3.5rem">--</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4 ">
+                    <div class="col-12" >
+                        <table class="table" >
+                            <thead >
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Update/Delete </th>
+                            </thead>
+
+                            <tbody id="expense-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog border-theme" style="border-width: 1px; border-radius: inherit;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Transaction</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="color: dodgerblue">
+                    <form>
+                    <label>Name of Expense</label><br>
+                    <input id="expense-name" type="text" class="form-control" required><br>
+                    <label>Type of Expense</label><br>
+                    <select id="expense-type" class="form-control" required>
+                        <option value="" disabled selected hidden>Select Type</option>
+                        <option value="Debit"><span id="debit-btn">Debit</span></option>
+                        <option value="Credit"><span id="credit-btn">Credit</span></option>
+                    </select><br>
+                    <label>Amount</label><br>
+                    <input id="expense-amount" type="number" class="form-control" required><br>
+                    <label>Enter Date</label><br>
+                    <input id="expense-date" type="date" class="form-control" required><br>
+                    <label>Enter time</label><br>
+                    <input id="expense-time" type="time" class="form-control" required><br>
+                    <label>Category</label><br>
+                    <select id="expense-category" class="form-control" required>
+                        <option value="" disabled selected hidden>Select Category</option>
+                        <option class="debit" value="Bills">Bills</option>
+                        <option class="debit" value="Grocery">Grocery</option>
+                        <option class="debit" value="Rent & Mortgages">Rent & Mortgages</option>
+                        <option class="debit" value="Lifestyle">Lifestyle</option>
+                        <option class="debit" value="Healthcare">Healthcare</option>
+                        <option class="credit" value="Salary">Salary</option>
+                        <option class="credit" value="Bonus">Bonus</option>
+                        <option class="credit" value="Profit">Profit</option>
+                        <option class="credit" value="Other Sources">Other Sources</option>
+                    </select><hr>
+                    <button class="btn btn-block" style="background: dodgerblue; color: white;" id="add-expense">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" >
+        <div class="modal-dialog border-theme" style="border-width: 1px; border-radius: inherit;">
+
+            <!-- Modal content-->
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Transaction</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="color: dodgerblue">
+                    <form>
+                        <label>Name of Expense</label><br>
+                        <input id="edit-name" type="text" class="form-control" required><br>
+                        <label>Amount</label><br>
+                        <input id="edit-amount" type="number" class="form-control" required><br>
+                        <label>Category</label><br>
+                        <select id="edit-category" class="form-control" required>
+                            <option value="" disabled selected hidden>Select Category</option>
+                        <option class="debit" value="Bills">Bills</option>
+                        <option class="debit" value="Grocery">Grocery</option>
+                        <option class="debit" value="Rent & Mortgages">Rent & Mortgages</option>
+                        <option class="debit" value="Lifestyle">Lifestyle</option>
+                        <option class="debit" value="Healthcare">Healthcare</option>
+                        <option class="credit" value="Salary">Salary</option>
+                        <option class="credit" value="Bonus">Bonus</option>
+                        <option class="credit" value="Profit">Profit</option>
+                        <option class="credit" value="Other Sources">Other Sources</option>
+                    </select><hr>
+                        <button type="button" class="btn btn-block" style="background: dodgerblue; color: white;" id="save-edit">Save</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
+    <script src="js/firebase-credentials.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

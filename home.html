@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalytics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
+</head>
+
+<style>
+
+    body{
+        background: black;
+        font-family: Poppins;
+        letter-spacing: 0.6em;
+        color: #cefcfc;
+    }
+
+    ul{
+        color: black;
+    }
+
+    hr{
+        height: 1px;
+        background: white;
+    }
+
+    /* Position text in the middle of the page/image */
+    .container {
+        background-color: rgba(0,0,0,0); /* Fallback color */
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+
+<body id="page">
+<ul class="cb-slideshow">
+    <li><span>Image 01</span></li>
+    <li><span>Image 02</span></li>
+    <li><span>Image 03</span></li>
+    <li><span>Image 04</span></li>
+    <li><span>Image 05</span></li>
+    <li><span>Image 06</span></li>
+    <li><span>Image 07</span></li>
+    <li><span>Image 08</span></li>
+    <li><span>Image 09</span></li>
+    <li><span>Image 10</span></li>
+</ul>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin: auto; text-align: center">
+                <h1 class="display-3">Welcome to Finalytics!</h1><hr><br><br>
+                <h1 class="display-4">KEEP TRACK OF EXPENSES . <BR> MONITOR CREDIT . <BR> MANAGE PERSONAL FINANCES ON THE GO .</h1>
+                    <button id="google-login" class="btn btn-default mt-5 p-0 img-fluid"><img src="img/google.png" style="height: auto; max-width: 50%; border-radius: 0.3em;"></button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+    <script src="js/firebase-credentials.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
