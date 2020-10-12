@@ -154,6 +154,7 @@ function dataLoad() {
                 plot_bgcolor: 'transparent',
                 paper_bgcolor: 'transparent',
                 font: {color: '#777'},
+
             }
             let config = {
                 responsive: true,
