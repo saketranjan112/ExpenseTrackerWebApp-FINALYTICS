@@ -64,13 +64,9 @@ td{
     font-weight: 500;
 }
 
-.btn-sq {
-    width: 80px !important;
-    height: 70px !important;
-}
 
 #time-period{
-    height:50px;
+    height: auto;
     color: #1e90ff;
     font-size: larger;
     font-weight: bolder;
